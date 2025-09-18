@@ -56,7 +56,7 @@ def _split_text_semantic(text: str, max_words: int = 200, overlap: int = 30) -> 
     return overlapped_chunks
 
 
-def _create_table_summary(csv_str: str, table_id: str) -> str:
+def _create_table_summary(csv_str: str, table_id: str, doc_id: str = None, page_no: int = None, filename: str = None) -> str:
     try:
         from io import StringIO
         df = pd.read_csv(StringIO(csv_str))
@@ -105,6 +105,101 @@ def _should_include_chunk(content: str, min_length: int = 20) -> bool:
     
     return True
 
+def _create_table_row_chunks(csv_str: str, table_id: str, doc_id: str, page_no: int, filename: str) -> List[Dict[str, Any]]:
+    """
+    Parse CSV into dataframe and produce:
+      - one 'table_summary' chunk (brief)
+      - multiple 'table_row' chunks (row-level labeled text)
+      - focused 'key_value' chunks for financial terms if found (Net income, Total assets etc.)
+    """
+    from io import StringIO
+    row_chunks = []
+    try:
+        df = pd.read_csv(StringIO(csv_str))
+    except Exception:
+        # fallback: produce a simple summary chunk
+        return [{
+            "chunk_id": uuid.uuid4().hex,
+            "doc_id": doc_id,
+            "page_number": page_no,
+            "chunk_type": "table_summary",
+            "content": f"Table {table_id}: Could not parse CSV table.",
+            "metadata": {"source": filename, "page_number": page_no, "table_id": table_id}
+        }]
+
+    # table_summary
+    summary_parts = [
+        f"Table {table_id} contains {len(df)} rows and {len(df.columns)} columns.",
+        "Columns: " + ", ".join(df.columns.tolist())
+    ]
+    table_summary = "\n".join(summary_parts)
+    row_chunks.append({
+        "chunk_id": uuid.uuid4().hex,
+        "doc_id": doc_id,
+        "page_number": page_no,
+        "chunk_type": "table_summary",
+        "content": table_summary,
+        "metadata": {"source": filename, "page_number": page_no, "table_id": table_id}
+    })
+
+    # row-level chunks
+    for idx, row in df.iterrows():
+        # build "Col1: val1; Col2: val2; ..." text
+        parts = []
+        for col in df.columns:
+            val = row.get(col, "")
+            val_str = str(val) if not pd.isna(val) else ""
+            parts.append(f"{col}: {val_str}")
+        row_text = "; ".join(parts)
+        if _should_include_chunk(row_text, min_length=5):
+            row_chunks.append({
+                "chunk_id": uuid.uuid4().hex,
+                "doc_id": doc_id,
+                "page_number": page_no,
+                "chunk_type": "table_row",
+                "content": row_text,
+                "metadata": {
+                    "source": filename,
+                    "page_number": page_no,
+                    "table_id": table_id,
+                    "row_index": int(idx)
+                }
+            })
+
+    # key-value detection: look for financial terms in columns and create explicit KV chunks
+    financial_terms = ["net income", "net profit", "total assets", "total liabilities", "revenue", "sales", "profit"]
+    lower_cols = [c.lower() for c in df.columns]
+    for term in financial_terms:
+        # match column names containing term
+        matches = [i for i, col in enumerate(lower_cols) if term in col]
+        if matches:
+            for idx in range(len(df)):
+                # take matched columns in that row
+                kv_parts = []
+                for mi in matches:
+                    col_name = df.columns[mi]
+                    val = df.iloc[idx, mi]
+                    if pd.notna(val) and str(val).strip():
+                        kv_parts.append(f"{col_name}: {val}")
+                if kv_parts:
+                    kv_text = f"{term.title()} (detected): " + "; ".join(kv_parts)
+                    row_chunks.append({
+                        "chunk_id": uuid.uuid4().hex,
+                        "doc_id": doc_id,
+                        "page_number": page_no,
+                        "chunk_type": "table_kv",
+                        "content": kv_text,
+                        "metadata": {
+                            "source": filename,
+                            "page_number": page_no,
+                            "table_id": table_id,
+                            "row_index": int(idx),
+                            "kv_term": term
+                        }
+                    })
+
+    return row_chunks
+
 
 def chunk_document(doc: Dict[str, Any], max_words: int = 200, overlap: int = 30) -> List[Dict[str, Any]]:
     chunks: List[Dict[str, Any]] = []
@@ -114,10 +209,10 @@ def chunk_document(doc: Dict[str, Any], max_words: int = 200, overlap: int = 30)
     for page in doc.get("pages", []):
         page_no = page.get("page_number", 1)
         
+        # --- handle text ---
         text = page.get("text", "").strip()
         if text:
             text_chunks = _split_text_semantic(text, max_words=max_words, overlap=overlap)
-            
             for i, chunk_text in enumerate(text_chunks):
                 if _should_include_chunk(chunk_text):
                     chunks.append({
@@ -134,28 +229,17 @@ def chunk_document(doc: Dict[str, Any], max_words: int = 200, overlap: int = 30)
                         }
                     })
         
+        # --- handle tables ---
         tables = page.get("tables", [])
         for table in tables:
             table_id = table.get("table_id")
             csv_str = table.get("csv", "")
             
             if csv_str.strip():
-                table_summary = _create_table_summary(csv_str, table_id)
-                
-                if table_summary and _should_include_chunk(table_summary):
-                    chunks.append({
-                        "chunk_id": uuid.uuid4().hex,
-                        "doc_id": doc_id,
-                        "page_number": page_no,
-                        "chunk_type": "table_summary",
-                        "content": table_summary,
-                        "metadata": {
-                            "source": filename,
-                            "page_number": page_no,
-                            "table_id": table_id,
-                            "original_csv": csv_str[:500] + "..." if len(csv_str) > 500 else csv_str
-                        }
-                    })
+                table_chunks = _create_table_row_chunks(csv_str, table_id, doc_id, page_no, filename)
+                for tc in table_chunks:
+                    if _should_include_chunk(tc.get("content", ""), min_length=5):
+                        chunks.append(tc)
     
     return chunks
 

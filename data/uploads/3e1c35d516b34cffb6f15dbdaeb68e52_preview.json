@@ -1,0 +1,20 @@
+{
+  "doc_id": "3e1c35d516b34cffb6f15dbdaeb68e52",
+  "filename": "672520bc0db943aea063883179e80f2c_Sample-Financial-Statements-1-pages-1.pdf",
+  "path": "C:\\Users\\saadh\\OneDrive\\Documents\\GitHub\\AI_financial_doc_qna\\data\\uploads\\672520bc0db943aea063883179e80f2c_Sample-Financial-Statements-1-pages-1.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "Sample Company\nIncome Statement (Service)\nFor the Year Ended September 30, 2021\nService revenue $2,750\nOperating Expenses:\nDepreciation expense 100\nWages expenses 1,200\nSupplies expenses 60\nTotal operating expenses 1,360\nOperating Income 1,390\nOther Item:\nInterest expense 40\nPretax income 1,350\nIncome tax expense 405\nNet income $945\nSample Company\nStatement of Retained Earnings\nFor the Year Ended September 30, 2021\nRetained Earnings\nBalance, October 1, 2020 $ 820\nNet income 945\nDividends declared (500)\nBalance, September 30, 2021 $1,265",
+      "tables": [
+        {
+          "table_id": "b96527d8cd224fd5ac53ba9dfdf28b21",
+          "csv": "0,1,2\r\n,Sample Company,\r\n,Income Statement (Service),\r\n,\"For the Year Ended September 30, 2021\",\r\nService revenue,,\"$2,750\"\r\n\"O\nperating Expenses:\",,\r\nDepreciation expense,100,\r\nWages expenses,\"1,200\",\r\nSupplies expenses,60,\r\nTotal operating expenses,,\"1,360\"\r\n\"O\nperating Income\",,\"1,390\"\r\n\"O\nther Item:\",,\r\nInterest expense,40,\r\nPretax income,,\"1,350\"\r\nIncome tax expense,405,\r\nNet income,,$945\r\n,Sample Company,\r\n,Statement of Retained Earnings,\r\n,\"For the Year Ended September 30, 2021\",\r\n,Retained Earnings,\r\n\"Balance, October 1, 2020\",$  820,\r\nNet income,945,\r\nDividends declared,(500),\r\n\"Balance, September 30, 2021\",\"$1,265\",\r\n"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_name": "Sample-Financial-Statements-1-pages-1.pdf"
+  }
+}

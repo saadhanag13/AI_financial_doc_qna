@@ -5,6 +5,7 @@
 import re
 from typing import List, Dict, Any, Set, Optional
 import math
+from typing import Optional
 
 from backend import embedder
 
@@ -170,38 +171,78 @@ def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redu
     """
     FIXED: Added the missing parameters that qa.py expects
     """
-    if not query.strip():
+    if not query or not query.strip():
         return []
     
     # Get more initial results for reranking
-    initial_k = min(top_k * 3, 15)  
+    initial_k = min(top_k * 5, 50)  
     ann_results = embedder.query_index(query, top_k=initial_k)
     
-    if not ann_results:
-        return []
+    # if not ann_results:
+    #     return []
     
     # Convert to standardized format
     chunks = []
-    for chunk_id, distance, metadata in ann_results:
-        similarity_score = 1 / (1 + distance) 
-        
-        chunk = {
-            "chunk_id": chunk_id,
-            "score": similarity_score,
-            "content": metadata.get("content", ""),
-            "chunk_type": metadata.get("chunk_type", "text"),
-            "metadata": {
-                "doc_id": metadata.get("doc_id"),
-                "page_number": metadata.get("page_number"),
-                "source": metadata.get("source", "unknown")
+    if ann_results:
+        for chunk_id, distance, metadata in ann_results:
+            similarity_score = 1 / (1 + distance) 
+            
+            chunk = {
+                "chunk_id": chunk_id,
+                "score": similarity_score,
+                "content": metadata.get("content", "") if isinstance(metadata, dict) else "",
+                "chunk_type": metadata.get("chunk_type", "text") if isinstance(metadata, dict) else "text",
+                "metadata": {
+                    "doc_id": metadata.get("doc_id") if isinstance(metadata, dict) else None,
+                    "page_number": metadata.get("page_number") if isinstance(metadata, dict) else None,
+                    "source": metadata.get("source", "unknown") if isinstance(metadata, dict) else "unknown",
+                }
             }
-        }
         chunks.append(chunk)
     
     # Filter by target document if specified
     if target_doc_id:
-        chunks = filter_chunks_by_document(chunks, target_doc_id)
+        chunks = [c for c in chunks if c.get("metadata", {}).get("doc_id") == target_doc_id]    
     
+    if not chunks:
+        try:
+            # embedder._get_conn exists in your embedder; use it to query chunks table directly
+            with embedder._get_conn() as conn:
+                # Construct a simple LIKE pattern based on the raw query and important keywords
+                keywords = list(extract_query_keywords(query))
+                patterns = set()
+                # prefer multi-word query match first
+                if len(query.strip()) > 3:
+                    patterns.add(f"%{query.strip()}%")
+                # add single-word keyword patterns
+                for kw in keywords:
+                    patterns.add(f"%{kw}%")
+                rows = []
+                for p in patterns:
+                    cur = conn.execute(
+                        "SELECT chunk_id, doc_id, page_number, chunk_type, content, metadata FROM chunks WHERE content LIKE ? LIMIT ?",
+                        (p, top_k * 5)
+                    )
+                    rows.extend(cur.fetchall())
+
+                # deduplicate row by chunk_id
+                seen = set()
+                for r in rows:
+                    cid, docid, pno, ctype, content, metadata = r
+                    if cid in seen:
+                        continue
+                    seen.add(cid)
+                    chunks.append({
+                        "chunk_id": cid,
+                        "score": 0.5,  # fallback baseline score
+                        "content": content,
+                        "chunk_type": ctype,
+                        "metadata": {"doc_id": docid, "page_number": pno, "source": getattr(metadata, 'source', None) or metadata}
+                    })
+        except Exception:
+            # If DB fallback fails, just continue with empty chunks
+            pass
+
     # Re-rank chunks
     if use_reranking and len(chunks) > 1:
         chunks = rerank_chunks(chunks, query)
@@ -211,6 +252,7 @@ def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redu
         chunks = filter_redundant_chunks(chunks)
     
     return chunks[:top_k]
+    
 
 
 def get_retrieval_stats(chunks: List[Dict[str, Any]]) -> Dict[str, Any]:

@@ -1,0 +1,40 @@
+{
+  "doc_id": "1cff31aff5184d3ab5b6ba13df47d225",
+  "filename": "4ddc29d808ae455cbd58c7d764b6416d_Sample-Financial-Statements-1.pdf",
+  "path": "C:\\Users\\saadh\\OneDrive\\Documents\\GitHub\\AI_financial_doc_qna\\data\\uploads\\4ddc29d808ae455cbd58c7d764b6416d_Sample-Financial-Statements-1.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "Sample Company\nIncome Statement (Service)\nFor the Year Ended September 30, 2021\nService revenue $2,750\nOperating Expenses:\nDepreciation expense 100\nWages expenses 1,200\nSupplies expenses 60\nTotal operating expenses 1,360\nOperating Income 1,390\nOther Item:\nInterest expense 40\nPretax income 1,350\nIncome tax expense 405\nNet income $945\nSample Company\nStatement of Retained Earnings\nFor the Year Ended September 30, 2021\nRetained Earnings\nBalance, October 1, 2020 $ 820\nNet income 945\nDividends declared (500)\nBalance, September 30, 2021 $1,265",
+      "tables": [
+        {
+          "table_id": "29ead332efe0452e8a86d3953d26071b",
+          "csv": "0,1,2\r\n,Sample Company,\r\n,Income Statement (Service),\r\n,\"For the Year Ended September 30, 2021\",\r\nService revenue,,\"$2,750\"\r\n\"O\nperating Expenses:\",,\r\nDepreciation expense,100,\r\nWages expenses,\"1,200\",\r\nSupplies expenses,60,\r\nTotal operating expenses,,\"1,360\"\r\n\"O\nperating Income\",,\"1,390\"\r\n\"O\nther Item:\",,\r\nInterest expense,40,\r\nPretax income,,\"1,350\"\r\nIncome tax expense,405,\r\nNet income,,$945\r\n,Sample Company,\r\n,Statement of Retained Earnings,\r\n,\"For the Year Ended September 30, 2021\",\r\n,Retained Earnings,\r\n\"Balance, October 1, 2020\",$  820,\r\nNet income,945,\r\nDividends declared,(500),\r\n\"Balance, September 30, 2021\",\"$1,265\",\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "text": "Sample Company\nIncome Statement (Product)\nFor the Year Ended September 30, 2021\nSales revenue $6,875\nCost of Goods Sold ( 4,125)\nGross Profit $2,750\nOperating Expenses:\nDepreciation expense 100\nWages expenses 1,200\nSupplies expenses 60\nTotal operating expenses 1,360\nOperating Income 1,390\nOther Item:\nInterest expense 40\nPretax income 1,350\nIncome tax expense 405\nNet income $945\nSample Company\nStatement of Retained Earnings\nFor the Year Ended September 30, 2021\nRetained Earnings\nBalance, October 1, 2020 $ 820\nNet income 945\nDividends declared (500)\nBalance, September 30, 2021 $1,265",
+      "tables": [
+        {
+          "table_id": "ef5ed349a0564aea9a4c7617ab9d882c",
+          "csv": "0,1,2\r\n,Sample Company,\r\n,Income Statement (Product),\r\n,\"For the Year Ended September 30, 2021\",\r\nSales revenue,,\"$6,875\"\r\nCost of Goods Sold,,\"( 4,125)\"\r\nGross Profit,,\"$2,750\"\r\n\"O\nperating Expenses:\",,\r\nDepreciation expense,100,\r\nWages expenses,\"1,200\",\r\nSupplies expenses,60,\r\nTotal operating expenses,,\"1,360\"\r\n\"O\nperating Income\",,\"1,390\"\r\n\"O\nther Item:\",,\r\nInterest expense,40,\r\nPretax income,,\"1,350\"\r\nIncome tax expense,405,\r\nNet income,,$945\r\n,Sample Company,\r\n,Statement of Retained Earnings,\r\n,\"For the Year Ended September 30, 2021\",\r\n,Retained Earnings,\r\n\"Balance, October 1, 2020\",$  820,\r\nNet income,945,\r\nDividends declared,(500),\r\n\"Balance, September 30, 2021\",\"$1,265\",\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 3,
+      "text": "Sample Company\nBalance Sheet\nSeptember 30, 2021\nAssets Liabilities and Stockholders’ Equity\nCurrent Assets: Current Liabilities:\nCash $ 1,550 Accounts payable $60\nAccounts receivable 770 Interest payable 80\nSupplies 40 Wages payable 100\nTotal current assets 2,360 Income taxes payable 405\nUtilities payable 250\nTotal Current Liabilities 895\nEquipment 12,000 Long-term Notes Payable 8,000\nLess: Accumulated deprec. (1,300)\n10,700 Owners' Equity:\nOwners’ capital 2,900\nRetained earnings 1,265\nTotal equity\n4,165\nTotal liabilities and\nTotal assets $13,060 owners' equity $13,060",
+      "tables": [
+        {
+          "table_id": "5f71b1025c0141a283a507aa286335ae",
+          "csv": "0,1,2\r\n,\"September 30, 2021\",\r\nAssets,,Liabilities and Stockholders’ Equity\r\nCurrent Assets:,,Current Liabilities:\r\nCash,\"$ 1,550\",\"Accounts payable \n$60\"\r\nAccounts receivable,770,\"Interest payable \n  80\"\r\nSupplies,40,\"Wages payable \n  100\"\r\nTotal current assets,\"2,360\",\"405 \nIncome taxes payable\"\r\n,,\"250 \nUtilities payable\"\r\n,,\"Total Current Liabilities \n  895\"\r\nEquipment,\"12,000\",\"Long-term Notes Payable \n  8,000\"\r\nLess: Accumulated deprec.,\"(1,300)\",\r\n,\"10,700\",Owners' Equity:\r\n,,\"Owners’ capital \n  2,900\"\r\n,,\"Retained earnings \n  1,265\"\r\n,,Total equity\r\n"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_name": "Sample-Financial-Statements-1.pdf"
+  }
+}

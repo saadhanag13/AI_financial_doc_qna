@@ -148,6 +148,14 @@ API Documentation: http://localhost:8000/docs
 ```
 ---
 
+### Demo Flow
+1. **Upload PDF or Excel**: Upload the any Sample financial document provided.
+2. **Enter your question**: Your question that relates to the uploaded document.
+3. **Ask**: Hit the button and you can find the Answer from the source, page_id, page_number. 
+4. **Conversation History**: Stores all the recent conversation for future use.
+
+---
+
 ## API Endpoints
 ### Core Endpoints
 
@@ -169,7 +177,7 @@ API Documentation: http://localhost:8000/docs
 
 ## Testing- Run Unit tests
 ```bash
-python tests/pipeline/py
+python tests/pipeline.py
 ```
 
 ---

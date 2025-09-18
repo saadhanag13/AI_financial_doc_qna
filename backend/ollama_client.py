@@ -17,7 +17,7 @@ def generate(messages, max_tokens: int = 512) -> str:
     }
 
     try:
-        with requests.post(url, json=payload, stream=True, timeout=60) as resp:
+        with requests.post(url, json=payload, stream=True) as resp:
             resp.raise_for_status()
             full_reply = []
             for line in resp.iter_lines():

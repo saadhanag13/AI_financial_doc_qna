@@ -77,22 +77,29 @@ if st.button("Ask") and query:
             # Store conversation - use the answer string directly
             utils.add_conversation(session_id, query, answer)
             
-            # Display results
-            st.subheader("Answer")
-            st.write(answer)
+            # # Display results
+            # st.subheader("Answer")
+            # st.write(answer)
             
             # Display provenance information
             if provenance:
                 st.subheader("Sources")
                 for i, prov in enumerate(provenance, 1):
-                    with st.expander(f"Source {i}: {prov.get('source', 'Unknown')} (Page {prov.get('page_number', 'N/A')})"):
-                        st.write(f"**Document:** {prov.get('source', 'Unknown')}")
+                    with st.expander(f"Source {i}: {prov.get('source', 'filename')} (Page {prov.get('page_number', 'N/A')})"):
+                        st.write(f"**Document:** {prov.get('source', 'filename')}")
                         st.write(f"**Page:** {prov.get('page_number', 'N/A')}")
                         st.write(f"**Type:** {prov.get('chunk_type', 'text')}")
                         st.write(f"**Relevance Score:** {prov.get('relevance_score', 0):.3f}")
                         st.write("**Content Preview:**")
                         st.text(prov.get('content_preview', 'No preview available'))
+            # Display results
+            st.subheader("Answer")
+            st.write(answer)
+            # st.write("**Content Preview:**")
+            st.text(prov.get('content_preview', 'No preview available'))
             
+            st.markdown("---")
+
             # Display debug info if available
             if debug_history and st.checkbox("Show Debug Information"):
                 st.subheader("Debug Information")
