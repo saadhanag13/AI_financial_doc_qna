@@ -187,7 +187,7 @@ python tests/pipeline.py
 - Ensure Ollama is running: ollama serve
 - Check model is downloaded: ollama list
 
-### "ystem dependencies missing
+### System dependencies missing
 - Run: python scripts/setup_env.py
 - Install missing OCR/PDF tools
 
