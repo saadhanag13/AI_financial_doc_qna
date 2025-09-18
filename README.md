@@ -48,7 +48,7 @@ A comprehensive Retrieval-Augmented Generation (RAG) system for analyzing financ
 ---
 
 ## 📂 Project Structure
-
+```bash
 AI_financial_doc_qna/
 │── backend/
 │ ├── app.py # FastAPI app
@@ -66,7 +66,7 @@ AI_financial_doc_qna/
 │ ├── pipeline.py # Unit tests for core pipeline
 │── requirements.txt
 │── README.md
-
+```
 ---
 
 ## 📦 Installation
