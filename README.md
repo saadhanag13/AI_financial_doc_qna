@@ -33,7 +33,7 @@ A comprehensive Retrieval-Augmented Generation (RAG) system for analyzing financ
   - `GET /ask?query=...` → Simple QA (direct Ollama call)  
   - `POST /ask` → Full **RAG QA pipeline** with provenance
 
-- **Frontend (optional)**
+- **Frontend**
   - `frontend/app.py` (Streamlit prototype)
   - UI for uploading PDFs and asking questions
   - Shows answers + provenance (doc_id, page number, preview)
@@ -67,7 +67,6 @@ AI_financial_doc_qna/
 │── requirements.txt
 │── README.md
 
-
 ---
 
 ## 📦 Installation
@@ -78,11 +77,15 @@ AI_financial_doc_qna/
 - System Dependencies (for PDF/OCR processing):
 
 ### Clone the repo
-- git clone https://github.com/saadhanag13/AI_financial_doc_qna.git
-- cd AI_financial_doc_qna
+```bash
+git clone https://github.com/saadhanag13/AI_financial_doc_qna.git
+cd AI_financial_doc_qna
+```
 
 ### Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### Setup Ollama and download model:
 ``` bash
@@ -117,6 +120,7 @@ DEBUG_MODE=true
 DATA_DIR=./data
 DB_PATH=./data/app.db
 ```
+
 ### Usage:
 ### Starting the Services:
 - Start ollama: 
@@ -142,6 +146,7 @@ cd streamlit run frontend/app.py
 Frontend: http://localhost:8501
 API Documentation: http://localhost:8000/docs
 ```
+---
 
 ## API Endpoints
 ### Core Endpoints
@@ -152,21 +157,24 @@ API Documentation: http://localhost:8000/docs
 - GET /search - Search chunks with filters
 - POST /generate - Direct LLM generation (no RAG)
 
+---
+
 ## Utility Endpoints
 
 - GET /health - System health check
 - GET /stats - System statistics
 - GET /test-context - Test document context detection
 
-## Testing
-### Run Unit Tests
+---
+
+## Testing- Run Unit tests
 ```bash
 python tests/pipeline/py
 ```
 
-## Troubleshooting
-### Common Issues
+---
 
+## Troubleshooting
 ### Ollama not responding
 - Ensure Ollama is running: ollama serve
 - Check model is downloaded: ollama list
@@ -183,6 +191,8 @@ python tests/pipeline/py
 - Verify document upload and processing
 - Check chunk quality in /search endpoint
 - Adjust chunking parameters in chunker.py
+
+---
 
 ## 🧑‍💻 Author
 ### Saadhana Ganesa Narasimhan
