@@ -36,4 +36,4 @@ httpx==0.27.2
 requests==2.32.3
 
 # Ollama (local LLM client)
-ollama==0.1.8   # (if you’re using the pip Ollama wrapper; otherwise just the binary)
+ollama==0.1.8  

@@ -1,7 +1,4 @@
 #backend/retriever.py
-
-# backend/retriever.py - QUICK FIX VERSION
-
 import re
 from typing import List, Dict, Any, Set, Optional
 import math
@@ -91,7 +88,6 @@ def calculate_chunk_quality_score(chunk: Dict[str, Any]) -> float:
 
 
 def filter_chunks_by_document(chunks: List[Dict[str, Any]], target_doc_id: str) -> List[Dict[str, Any]]:
-    """Filter chunks to only include those from a specific document"""
     if not target_doc_id:
         return chunks
     
@@ -168,9 +164,7 @@ def filter_redundant_chunks(chunks: List[Dict[str, Any]], similarity_threshold: 
 
 def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redundant: bool = True, 
             target_doc_id: Optional[str] = None, use_document_context: bool = True) -> List[Dict[str, Any]]:
-    """
-    FIXED: Added the missing parameters that qa.py expects
-    """
+ 
     if not query or not query.strip():
         return []
     
@@ -178,10 +172,7 @@ def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redu
     initial_k = min(top_k * 5, 50)  
     ann_results = embedder.query_index(query, top_k=initial_k)
     
-    # if not ann_results:
-    #     return []
-    
-    # Convert to standardized format
+
     chunks = []
     if ann_results:
         for chunk_id, distance, metadata in ann_results:
@@ -200,21 +191,16 @@ def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redu
             }
         chunks.append(chunk)
     
-    # Filter by target document if specified
     if target_doc_id:
         chunks = [c for c in chunks if c.get("metadata", {}).get("doc_id") == target_doc_id]    
     
     if not chunks:
         try:
-            # embedder._get_conn exists in your embedder; use it to query chunks table directly
             with embedder._get_conn() as conn:
-                # Construct a simple LIKE pattern based on the raw query and important keywords
                 keywords = list(extract_query_keywords(query))
                 patterns = set()
-                # prefer multi-word query match first
                 if len(query.strip()) > 3:
                     patterns.add(f"%{query.strip()}%")
-                # add single-word keyword patterns
                 for kw in keywords:
                     patterns.add(f"%{kw}%")
                 rows = []
@@ -225,7 +211,6 @@ def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redu
                     )
                     rows.extend(cur.fetchall())
 
-                # deduplicate row by chunk_id
                 seen = set()
                 for r in rows:
                     cid, docid, pno, ctype, content, metadata = r
@@ -234,13 +219,12 @@ def retrieve(query: str, top_k: int = 5, use_reranking: bool = True, filter_redu
                     seen.add(cid)
                     chunks.append({
                         "chunk_id": cid,
-                        "score": 0.5,  # fallback baseline score
+                        "score": 0.5,  
                         "content": content,
                         "chunk_type": ctype,
                         "metadata": {"doc_id": docid, "page_number": pno, "source": getattr(metadata, 'source', None) or metadata}
                     })
         except Exception:
-            # If DB fallback fails, just continue with empty chunks
             pass
 
     # Re-rank chunks

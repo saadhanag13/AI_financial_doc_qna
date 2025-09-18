@@ -12,7 +12,6 @@ def sanitize_content(s: str) -> str:
     else:
         s = str(s)
 
-    # replace control characters except newline/tab
     s = re.sub(r"[^\x09\x0A\x20-\x7E\u0080-\uFFFF]", " ", s)
     # collapse multiple whitespace
     s = re.sub(r"\s+", " ", s).strip()
@@ -27,19 +26,16 @@ def normalize_metadata(raw):
     if not txt:
         return {}
 
-    # Try valid JSON
     try:
         return json.loads(txt)
     except Exception:
         pass
 
-    # Try ast.literal_eval (safe-ish) to parse python dict-like strings
     try:
         return ast.literal_eval(txt)
     except Exception:
         pass
 
-    # Last resort: try to convert single-quotes -> double-quotes and load
     try:
         candidate = re.sub(r"'", '"', txt)
         candidate = re.sub(r",\s*}", "}", candidate)
@@ -54,7 +50,6 @@ def migrate():
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
-    # Read existing rows if table exists
     cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='chunks'")
     if not cur.fetchone():
         print("No existing 'chunks' table found — nothing to migrate.")
@@ -87,7 +82,6 @@ def migrate():
         old_chunk_id, doc_id, page_number, chunk_type, content, metadata = r
         chunk_id = str(old_chunk_id) if old_chunk_id is not None else None
         if chunk_id is None or chunk_id == "":
-            # if previous table used integer autoincrement, make chunk_id string of rowid fallback
             chunk_id = f"old-{inserted+1}"
 
         content_clean = sanitize_content(content)

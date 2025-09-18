@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from backend import processor, chunker
 
-pdf_path = os.path.join("Sample-Financial-Statements-1.pdf")  # adjust if in data/uploads
+pdf_path = os.path.join("Sample-Financial-Statements-1.pdf") 
 
 # Wrap path in a file-like object
 with open(pdf_path, "rb") as f:

@@ -106,12 +106,7 @@ def _should_include_chunk(content: str, min_length: int = 20) -> bool:
     return True
 
 def _create_table_row_chunks(csv_str: str, table_id: str, doc_id: str, page_no: int, filename: str) -> List[Dict[str, Any]]:
-    """
-    Parse CSV into dataframe and produce:
-      - one 'table_summary' chunk (brief)
-      - multiple 'table_row' chunks (row-level labeled text)
-      - focused 'key_value' chunks for financial terms if found (Net income, Total assets etc.)
-    """
+
     from io import StringIO
     row_chunks = []
     try:

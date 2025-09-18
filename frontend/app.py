@@ -95,7 +95,6 @@ if st.button("Ask") and query:
             # Display results
             st.subheader("Answer")
             st.write(answer)
-            # st.write("**Content Preview:**")
             st.text(prov.get('content_preview', 'No preview available'))
             
             st.markdown("---")

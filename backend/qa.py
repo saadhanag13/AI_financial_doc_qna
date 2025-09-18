@@ -37,7 +37,6 @@ Instructions: Answer the financial question using only the information from the 
 
 
 def detect_financial_query_type(query: str) -> str:
-    """Detect what type of financial information is being requested"""
     query_lower = query.lower()
     
     # Balance Sheet items
@@ -60,8 +59,7 @@ def detect_financial_query_type(query: str) -> str:
 
 
 def extract_financial_amounts(text: str) -> List[Dict[str, Any]]:
-    """Extract dollar amounts and financial figures from text"""
-    # Pattern for dollar amounts (with or without commas)
+
     dollar_pattern = r'\$\s*(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)'
     amounts = re.findall(dollar_pattern, text)
     
@@ -76,7 +74,6 @@ def extract_financial_amounts(text: str) -> List[Dict[str, Any]]:
 
 
 def format_financial_context(chunks: List[Dict[str, Any]], query_type: str) -> str:
-    """Format context specifically for financial documents"""
     if not chunks:
         return "No relevant financial information found."
     
@@ -115,9 +112,7 @@ def format_financial_context(chunks: List[Dict[str, Any]], query_type: str) -> s
 
 def answer_financial_question(question: str, top_k: int = 5, include_debug: bool = False, 
                             target_doc_id: Optional[str] = None) -> Tuple[str, List[Dict], List[str]]:
-    """
-    Enhanced QA specifically for financial documents
-    """
+
     debug_history = []
     debug_history.append(f"Financial Question: {question}")
     
@@ -181,10 +176,7 @@ def answer_financial_question(question: str, top_k: int = 5, include_debug: bool
 # Update the main answer_question function to use financial enhancement
 def answer_question(question: str, top_k: int = 5, include_debug: bool = False, 
                    target_doc_id: Optional[str] = None) -> Tuple[str, List[Dict], List[str]]:
-    """
-    Main QA function that automatically detects financial queries
-    """
-    # Check if this is a financial query
+
     financial_keywords = ['assets', 'liabilities', 'revenue', 'income', 'profit', 'expenses', 
                          'balance sheet', 'cash flow', '$', 'financial', 'statement']
     
@@ -193,8 +185,7 @@ def answer_question(question: str, top_k: int = 5, include_debug: bool = False,
     if is_financial:
         return answer_financial_question(question, top_k, include_debug, target_doc_id)
     else:
-        # Use the original enhanced QA for non-financial queries
-        # [Previous qa.py implementation would go here]
+
         debug_history = []
         debug_history.append(f"Question: {question}")
         
@@ -205,7 +196,6 @@ def answer_question(question: str, top_k: int = 5, include_debug: bool = False,
             answer = "No relevant information found in the uploaded documents."
             return answer, [], debug_history
         
-        # Simple context formatting for non-financial queries
         context_parts = []
         for i, chunk in enumerate(chunks, 1):
             metadata = chunk.get("metadata", {})
