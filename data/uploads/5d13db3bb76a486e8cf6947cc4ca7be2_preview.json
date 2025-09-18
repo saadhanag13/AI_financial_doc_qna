@@ -1,0 +1,87 @@
+{
+  "doc_id": "5d13db3bb76a486e8cf6947cc4ca7be2",
+  "filename": "9df33f619eb74e3dbfeba9535474f920_List of firms.xlsx",
+  "path": "C:\\Users\\saadh\\OneDrive\\Documents\\GitHub\\AI_financial_doc_qna\\data\\uploads\\9df33f619eb74e3dbfeba9535474f920_List of firms.xlsx",
+  "pages": [
+    {
+      "page_number": 1,
+      "sheet_name": "Accounting",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "e193fd46f30f422bac102a867b93b065",
+          "csv": "Accounting Firms (e.g. Tax/Audit),Unnamed: 1\r\nPwC,https://www.pwc.co.uk/careers/early-careers.html\r\nDeloitte,https://www2.deloitte.com/uk/en/pages/careers/home.html\r\nKPMG,https://www.kpmgcareers.co.uk/\r\nEY,https://www.ey.com/en_uk/careers\r\nBDO,https://careers.bdo.co.uk/graduates\r\nGrant Thornton,https://www.grantthornton.com/careers/early-career.aspx\r\nRSM,https://www.rsmuk.com/careers/students\r\nAzets,https://www.azets.co.uk/careers/early-careers/\r\nMazars,https://jobs.mazars.co.uk/jobs/early-careers/\r\nMHA,https://www.macintyrehudson.co.uk/careers\r\nMoore Kingston Smith,https://mooreks.co.uk/careers/\r\nCrowe UK,https://www.crowe.com/uk/careers/early-careers\r\nHaines Watts,https://careers.hwca.com/search\r\nFRP Advisory,https://www.frpadvisory.com/about/careers/\r\nBegbies Traynor,https://www.begbies-traynorgroup.com/careers\r\nUHY Hacker Young,https://www.uhy-uk.com/careers\r\nBuzzacott,https://careers.buzzacott.co.uk/jobs\r\nQuantuma,https://www.quantuma.com/careers\r\nTax Assist Accountants,https://www.taxassist.co.uk/careers/vacancies\r\nPKF,https://opportunities.pkf-l.com/jobs/\r\nHaysmacintyre,https://haysmacintyre.com/careers/early/\r\nPrice Bailey,https://careers.pricebailey.co.uk/jobs/\r\nArmstrong Watson,https://www.armstrongwatson.co.uk/careers/current-opportunities\r\nBishop Fleming,https://careers.bishopfleming.co.uk/\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "sheet_name": "Consulting",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "b9742d54874740c58f28d0336b2a5ad4",
+          "csv": "Consulting Firms,Unnamed: 1\r\nMcKinsey & Company,https://www.mckinsey.com/careers/students\r\nBoston Consulting Group (BCG),https://careers.bcg.com/united-kingdom\r\nBain & Company,https://www.bain.com/careers\r\nOliver Wyman,https://www.oliverwyman.com/careers.html\r\nFTI Consulting,https://www.fticonsulting.com/careers\r\nOC&C,https://www.occstrategy.com/en/careers/\r\nBarnett Waddingham,https://www.barnett-waddingham.co.uk/careers/\r\nEY,https://www.ey.com/en_uk/careers\r\nPwC Deals Advisory,https://www.pwc.co.uk/careers/student-careers/undergraduate-graduate-careers/our-programmes/graduate-opportunities/deals.html\r\nStrategy&,https://www.strategyand.pwc.com/uk/en/careers/graduates-and-interns.html\r\nWillis Tower Watson,https://careers.willistowerswatson.com/early-careers/\r\nVivid Economics,https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi2tJ-K2MH4AhUem_0HHW2OBGoQFnoECAMQAQ&url=https%3A%2F%2Fwww.vivideconomics.com%2Fcareers%2F&usg=AOvVaw3PePx2ldIem4x3xLMYHuFv\r\nAccenture,https://www.accenture.com/gb-en/careers/local/graduate-home\r\nAT Kearney,https://www.uk.kearney.com/careers\r\nBDO,https://www.bdoearlyincareer.co.uk/\r\nGrant Thornton,https://www.grantthornton.com/careers/early-career.aspx\r\nKPMG,https://www.kpmgcareers.co.uk/\r\nParthenon,https://www.ey.com/en_gl/careers/parthenon/join/uk\r\nRoland Berger,https://www.rolandberger.com/en/Join/Your-Opportunity/Career-Starter/\r\nSimon-Kucher,https://www.simon-kucher.com/en?page=2\r\nElixirr,https://www.elixirr.com/job-openings/\r\nCapgemini,\r\nPA Consulting,\r\nAON,\r\nMTHREE,\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 3,
+      "sheet_name": "Engineering",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "d8adad724eac4f0bbfaea1e13c24782e",
+          "csv": "Engineering with Finance\r\nJaguar Land Rover\r\nRolls Royce\r\nAston Martin\r\nNetwork Rail\r\nLeonardo\r\nEDF\r\nLockheed Martin \r\nFluor\r\nSiemens\r\nAECOM\r\nNewton Europe \r\nINEOS\r\nLendlease\r\nAirbus\r\nMercedes AMG \r\nShell\r\nGE\r\nE.ON\r\nNATS\r\nKIER\r\nGeneral Dynamics \r\nCummins \r\nRaytheon \r\nUnilever\r\nWilliams F1 \r\nMultiplex\r\nBAE Systems \r\nFord\r\nBP\r\nBabcock \r\nFirstGroup\r\nNissan \r\nInstron \r\nMurphy\r\nDyson \r\nBOEING \r\nWSP\r\nOcado\r\n\"\"\r\nEngineering\r\nRolls Royce\r\nBAE Systems\r\nMercedes AMG \r\nBritish Airways \r\nNetwork Rail\r\nLaing O’Rourke \r\nFirstGroup\r\nLeonardo\r\nFujitsu\r\nGE\r\nEDF\r\nNATS\r\nNissan\r\nLockheed Martin \r\nKIER\r\nFluor\r\nGeneral Dynamics \r\nSiemens\r\nBWB\r\nRoyal Haskoning DHV \r\nSafran\r\nAquaterra Energy \r\nJacobs\r\nVeolia\r\nARUP\r\nMott MacDonald \r\nAECOM\r\nHoare Lea\r\nQinetiQ\r\nNewton Europe \r\nUnilever\r\nINEOS\r\nPBA Peterbrett \r\nCaterpillar\r\nTGW Group\r\nOcado\r\nBP\r\nLendlease\r\nBarratt Developments\r\nAirbus\r\nJaguar Land Rover \r\nFord\r\nBombardier \r\nBabcock\r\nNational Grid \r\nAtkins\r\nE.ON\r\nSpirax Sarco Computacenter\r\nBalfour Beatty\r\nThales\r\nGSK\r\nSchlumberger\r\nInstron\r\nCanary Wharf Contractors \r\nMurphy\r\nBOC\r\nCummins\r\nOrsted\r\nWood/Amec\r\nJames Walker\r\nDyson\r\nAston Martin\r\nFichtner\r\nBuroHappold\r\nRaytheon\r\nMeggitt\r\nBOEING \r\nNucleargraduates\r\nWSP\r\nWilliams F1\r\nGalliford Try\r\nMace\r\nNational Instruments \r\nShell\r\nTurner & Townsend \r\nMultiplex\r\nRicardo\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 4,
+      "sheet_name": "Banking",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "be9defe7091c40a4b52ebcf333603095",
+          "csv": "Banking & Investment Banking Firms,Unnamed: 1,Unnamed: 2\r\nDC Advisory,Boutique,https://www.dcadvisory.com/join-us/early-careers/#SummerAnalyst\r\nGleacher Shacklock,Boutique,https://gleachershacklock.freshminds.co.uk/graduate-and-internship-recruitment\r\nLincoln International,Boutique,https://www.lincolninternational.com/careers/analyst-interns/\r\nRobey Warshaw,Boutique,http://robeywarshaw.com/\r\nZaoui & Co.,Boutique,https://zaoui-co.sainoo.com/careers\r\nBank of America,Bulge-Bracket,https://campus.bankofamerica.com/opportunities.html\r\nBarclays,Bulge-Bracket,https://joinus.barclays/eme/internships/?\r\nCiti,Bulge-Bracket,https://jobs.citi.com/search-jobs\r\nCredit Suisse,Bulge-Bracket,https://tas-creditsuisse.taleo.net/careersection/campus/moresearch.ftl?lang=en\r\nDeutsche Bank,Bulge-Bracket,https://www.db.com/careers/en/grad/role-search/role-search-overview.html\r\nGoldman Sachs,Bulge-Bracket,https://www.goldmansachs.com/careers/students/programs/emea/summer-analyst-programme.html\r\nJP Morgan,Bulge-Bracket,https://careers.jpmorgan.com/us/en/students/programs?\r\nMorgan Stanley,Bulge-Bracket,https://www.morganstanley.com/people-opportunities/students-graduates/programs/institutional-securities\r\nUBS,Bulge-Bracket,https://jobs.ubs.com/TGnewUI/Search/Home/HomeWithPreLoad?partnerid=25008&siteid=5131&PageType=searchResults&SearchType=linkquery&LinkID=3858#keyWordSearch=&locationSearch=\r\nCenterview Partners,Elite Boutique,https://www.centerviewpartners.com/careers.aspx\r\nEvercore,Elite Boutique,https://evercore.tal.net/vx/lang-en-GB/mobile-0/appcentre-ext/brand-6/xf-61abc8ce0d6f/candidate/jobboard/vacancy/2/adv/\r\nGreenhill,Elite Boutique,https://greenhill.freshminds.co.uk/apply\r\nLazard,Elite Boutique,https://lazard.referrals.selectminds.com/students/jobs/search/1218974\r\nMoelis,Elite Boutique,https://moelis.wd1.myworkdayjobs.com/Experienced-Hires\r\nPJT Partners,Elite Boutique,https://pjtpartners.wd1.myworkdayjobs.com/en-US/Students\r\nPWP,Elite Boutique,https://pwpartners.com/careers/graduate-recruitment\r\nRothschild,Elite Boutique,https://www.rothschildandco.com/en/careers/students-and-graduates/programmes/\r\nBaird,Middle-Market,https://bairdcareers.com/career-search/?career_areas=Global%20Investment%20Banking\r\nHarris Williams,Middle-Market,https://pnc.wd5.myworkdayjobs.com/HarrisWilliams\r\nHoulihan Lokey,Middle-Market,https://chu.tbe.taleo.net/chu03/ats/careers/v2/jobSearch?act=redirectCwsV2&cws=45&org=HLHZ\r\nJefferies,Middle-Market,https://jefferies.tal.net/vx/lang-en-GB/mobile-0/appcentre-ext/brand-4/xf-016c915b0a67/candidate/jobboard/vacancy/2/adv/\r\nMacquarie,Middle-Market,https://www.careers.macquarie.com/en/listing/\r\nPiper Sandler,Middle-Market,https://chu.tbe.taleo.net/chu04/ats/careers/v2/jobSearch?act=redirectCwsV2&cws=44&org=PIPER_SANDLER\r\nWilliam Blair,Middle-Market,https://www.williamblair.com/Careers/Campus-Recruiting/Investment-Banking/Analyst-Program.aspx\r\nHSBC,,\r\nScotiabank,,\r\nRBC Capital Markets,,\r\nPerella Weinberg Partners,,\r\nT Rowe Price,,\r\nNomura,,\r\nMUFG,,\r\nTorch Partners,,\r\nSociété Générale,,\r\nSociété Générale (IBD),,\r\nMizuho,,\r\nStandard Chartered,,\r\nBNP Paribas,,\r\nRaymond James,,\r\nInvestec,,\r\nDeloitte,,\r\nBank of England,,\r\nPeel Hunt,,\r\nBNY Mellon,,\r\nNatwest Markets,,\r\nAlantra,,\r\nBBVA,,\r\nBerenberg,,\r\nBMO,,\r\nCantor Fitzgerald,,\r\nCapital One,,\r\nClearwater International,,\r\nCommerzbank,,\r\nDuff & Phelps,,\r\nFenchurch Advisory,,\r\nGP Bullhound,,\r\nKPMG Deals Advisory,,\r\nLloyds Banking Group,,\r\nM Capital,,\r\nNumis,,\r\nSantander,,\r\nSinger Capital Markets,,\r\nStifel,,\r\nTikehau Capital,,\r\nUniCredit,,\r\nTD Securities,,\r\n,,\r\n,,\r\n,,\r\nTrading Firms,,\r\nOptiver,https://www.optiver.com/working-at-optiver/career-opportunities/,\r\nCastleton Commodities Intl.,https://www.cci.com/careers,\r\nMaven Securities,https://www.mavensecurities.com/graduate-opportunities/,\r\nCitadel,https://www.citadel.com/careers/,\r\nJane Street,https://www.janestreet.com/join-jane-street/,\r\nBP Trading,https://www.bp.com/en/global/corporate/careers/students-and-graduates/locations/united-kingdom/trading-and-shipping-early-careers.html,\r\nDRW,https://drw.com/oncampus,\r\nEDF Trading,https://careers.edfenergy.com/content/Early-Careers-at-EDF-Energy/?locale=en_GB,\r\nGlencore,https://www.glencore.com/careers/,\r\nIMC Trading,https://careers.imc.com/,\r\nJump Trading,https://www.jumptrading.com/jobs.html,\r\nMako Trading,https://www.mako.com/early-careers,\r\nShell,https://www.shell.co.uk/careers.html,\r\nSIG,https://www.sigplc.com/careers,\r\nDare,https://www.dare.global/careers/,\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 5,
+      "sheet_name": "Asset Management",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "2a434a95294a44e78e9c7bb9a014f93d",
+          "csv": "Firm,Unnamed: 1\r\nPoint72,https://careers.point72.com/\r\nCapstone ,https://www.google.com/search?client=safari&rls=en&q=capstone+careers&ie=UTF-8&oe=UTF-8\r\nBlackstone,https://www.blackstone.com/careers/careers-blackstone/\r\nD.E Shaw,https://www.deshaw.com/careers\r\nTemasek,https://www.temasek.com.sg/en/careers\r\nBlackRock,https://careers.blackrock.com/early-careers/\r\nBain Capital Credit,https://baincapital.wd1.myworkdayjobs.com/External_Public\r\nBaillie Gifford,https://earlycareers.bailliegifford.com/\r\nPIMCO,https://www.pimco.co.uk/en-gb/our-firm/careers\r\nCapula Investment Management,https://careers.capulaglobal.com/\r\nFidelity,https://careers.fidelityinternational.com/early-careers-overview/early-careers/\r\nSchroders,https://schroders.referrals.selectminds.com/careers\r\nLazard Asset Management,\r\nWellington Management,https://www.wellington.com/en/careers/\r\nWinton Capital,https://www.winton.com/working-at-winton\r\nAviva Investors,https://careers.avivainvestors.com/starting-your-career/\r\nCapital Group,https://jobs.capitalgroup.com/\r\nAbrdn,https://www.abrdn.com/en-gb/corporate/careers\r\nLegal & General,https://www.legalandgeneral.com/careers\r\nMillennium Management  ,https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiw-9Gt2MH4AhWo7rsIHU88A1oQFnoECAgQAQ&url=https%3A%2F%2Fwww.mlp.com%2Fcareers%2F&usg=AOvVaw05T8CtHj_GuXN3fBAGr9L8\r\nBarings,https://www.barings.com/gb/institutional/about-us/careers-at-barings\r\nRedington,https://redington.co.uk/about/careers-at-redington/\r\nACR Capital,https://www.aqr.com/About-Us/Careers\r\nAIG,https://www.aig.co.uk/careers\r\nAlliance Bernstein,https://www.alliancebernstein.com/corporate/en/careers.html\r\nAltana Wealth,https://www.altanawealth.com/careers\r\nAmundi,https://jobs.amundi.com/homepage.aspx?LCID=2057\r\nAridan,https://www.ardian.com/join-us\r\nRokos Capital Management,https://trkr.app/campaign/2021-22-junior-hiring-programme/\r\nBalyasny Asset Management,https://www.bamfunds.com/careers/overview\r\nBlueBay,https://www.bp.com/en/global/corporate/careers/students-and-graduates/locations/united-kingdom/graduate-programmes.html\r\nBrookfield Asset Management,https://www.brookfield.com/about-us/careers\r\nCambell Luytens,https://www.campbell-lutyens.com/careers/\r\nCambridge Associates,https://www.cambridgeassociates.com/careers/early-career/\r\nCantab Asset Management,https://www.cantabam.com/careers/\r\nEuropa Capital,https://www.europacapital.com/\r\nEuropean Investment Fund,https://www.eif.org/jobs/\r\nGIC,https://careers.fidelityinternational.com/\r\nGSA Capital,https://www.gsacapital.com/careers/\r\nJanus Henderson,https://www.janushenderson.com/careers/\r\nJupiter Asset Management,https://www.jupiteram.com/Careers/\r\nLaSelle,https://www.jll.co.uk/en/careers/graduate-recruitment/our-schemes\r\nM&G,https://www.mandgplc.com/careers\r\nMan Group,https://www.man.com/careers\r\nMarshall Wace,https://www.mwam.com/join-us/\r\nNordea Asset Management,https://www.nordea.co.uk/en/private/careers/\r\nOrbis Investment Management,https://www.orbis.com/international/institutional/careers\r\nOxford Properties Group,https://www.oxfordproperties.com/corp/Careers\r\nPGIM,https://www.pgim.com/fixed-income/careers\r\nPictet,https://www.group.pictet/careers/students-graduates\r\nPSP Investments,https://www.investpsp.com/en/work/careers/\r\nRecord CM,https://www.recordcm.com/early-careers/why-join-record\r\nRuffer,https://www.ruffer.co.uk/About/Careers\r\nSavills Investment Management,https://www.savills.com/why-savills/careers.aspx\r\nSculptor Capital,https://www.sculptor.com/careers\r\nSt James's Place,https://www.sjp.co.uk/careers\r\nStandard Life Aberdeen,https://www.abrdn.com/corporate/careers/early-careers\r\nTwo Sigma,https://www.twosigma.com/careers/\r\nVanguard,https://www.vanguardjobs.com/early-talent/\r\nWalter Scott,https://www.walterscott.com/careers/\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 6,
+      "sheet_name": "Real Estate",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "dc67252b898d4023943611f0caf620af",
+          "csv": "Real Estate Firms,Unnamed: 1\r\nBNP Paribas Real Estate,https://www.realestate.bnpparibas.co.uk/early-careers\r\nKnight Frank,https://knightfrankearlycareers.com/\r\nAllsop,https://www.allsop.co.uk/work-with-us/\r\nAvison Young,https://www.avisonyoung.co.uk/careers\r\nBMO Real Estate Partners,https://www.bmogam.com/careers/\r\nBritish Land,https://www.britishland.com/careers\r\nCanary Wharf Group,https://group.canarywharf.com/careers/\r\nCapital and Counties,https://jobs.capitalone.co.uk/earlycareers\r\nCarter Jonas,https://static4.carterjonas.co.uk/early-careers\r\nCBRE,https://www.cbre.co.uk/about-cbre/careers\r\nColliers International,https://earlycareers.colliers.com/\r\nCs2,https://cs2.co.uk/graduate-opportunities/\r\nCushman & Wakefield,https://www.cushwakeearlycareers.com/\r\nDeloitte Real Estate,https://www2.deloitte.com/uk/en/careers/programmes.html\r\nDeVona Cresa,https://www.devono.com/about-cresa/\r\nGerald Eve,https://www.geraldeve.com/join-us/\r\nGrosvenor Group,https://www.grosvenor.com/careers\r\nHines,https://careers.ihg.com/\r\nHomes England,https://www.homesenglandcareers.co.uk/\r\nIvanhoe Cambridge,https://www.ivanhoecambridge.com/en/careers/\r\nJLL,https://www.jll.co.uk/en/careers/graduate-recruitment/our-schemes\r\nLand Securities Group,https://landsec.com/careers\r\nLichfields,https://lichfields.uk/graduates/\r\nMontagu Evans,https://www.montagu-evans.co.uk/careers/\r\nParagon BC,https://paragonbc.co.uk/working-with-us/current-vacancies\r\nPatrizia,https://www.patrizia.ag/en/career/people-development-talent-philosophy/early-career/\r\nPropeterra,https://www.propeterra.com/investments\r\nSavills,https://www.savills.co.uk/contact-us/careers.aspx\r\nSEGRO,https://www.segro.com/careers\r\nTurner and Townsend,https://www.turnerandtownsend.com/en/careers/\r\n"
+        }
+      ]
+    },
+    {
+      "page_number": 7,
+      "sheet_name": "Other",
+      "text": "",
+      "tables": [
+        {
+          "table_id": "9867c6e021684055ba7433eb0c17a679",
+          "csv": "These firms have a range of roles you can look into:\r\nAlfa\r\nAllianz\r\nBloomberg\r\nAIG\r\nBT\r\nAspen\r\nFactSet\r\nAXA\r\nICAP\r\nBupa\r\nMicrosoft\r\nNHS\r\nSKY\r\nVISA\r\nZurich\r\nVodafone\r\n"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "original_name": "List of firms.xlsx"
+  }
+}
